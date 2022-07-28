@@ -37,7 +37,7 @@ python crop.py --input_image=sample.py --is_resize=True --crop_size=512
 ## オプション
 `--input_image`と`--input_dir`は片方のみ使用可能。1枚だけに処理を施す場合は`--input_image`でもよい。
 
-### `bgw.py`
+### bgw.py
 
 |  option  |  discription  |
 | ---- | ---- |
@@ -46,7 +46,7 @@ python crop.py --input_image=sample.py --is_resize=True --crop_size=512
 |  --out_dir    |  出力場所。デフォルトは`result`  |
 |
 
-### `crop.py`
+### crop.py
 `--is_resize`は(w, h)の短い辺を`--crop_size`にする。補間はBICUBICを用いている。Pillow 10での変更(2023/7/1)に対応。
 |  option  |  discription  |
 | ---- | ---- |
