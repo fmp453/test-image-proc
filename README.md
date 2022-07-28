@@ -22,6 +22,11 @@ GPU support:
 pip install rembg[gpu]
 ```
 
+`Pillow`がなければインストール
+```
+pip install Pillow
+```
+
 ## 実行方法
 下記のコードを参照。オプションについては次項参照のこと
 ```
