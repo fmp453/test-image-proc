@@ -44,7 +44,6 @@ python crop.py --input_image=sample.py --is_resize=True --crop_size=512
 |  --input_image  |  単一画像へのパス  |
 |  --input_dir  |  画像が複数入ったフォルダへのパス。フォルダの中の画像は1枚でも可。  |
 |  --out_dir    |  出力場所。デフォルトは`result`  |
-|
 
 ### crop.py
 `--is_resize`は(w, h)の短い辺を`--crop_size`にする。補間はBICUBICを用いている。Pillow 10での変更(2023/7/1)に対応。
@@ -55,7 +54,6 @@ python crop.py --input_image=sample.py --is_resize=True --crop_size=512
 |  --out_dir    |  出力場所。デフォルトは`result`  |
 |  --is_resize  |  crop前にresizeするかどうか。`bool`でデフォルトは`False`|
 |  --crop_size  |  cropする画像のサイズ。デフォルトは256。偶数のみ指定可能。 |
-|
 
 ## Acknowledge 
 The Liblary `rembg` is implemented at [@danielgatis](https://github.com/danielgatis/rembg). 
