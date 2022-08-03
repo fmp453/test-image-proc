@@ -31,21 +31,24 @@ else:
 if not os.path.exists(out_dir) and out_dir != '.':
     os.mkdir(out_dir)
 
+WHITE = (255, 255, 255)
 
 for f in input_path:
     input_image = Image.open(f)
-    trans_image = remove(input_image)
-    trans_pixel = trans_image.getpixel((0, 0))
-    output_image = Image.new(input_image.mode, input_image.size)
-    for i in range(input_image.height):
-        for j in range(input_image.width):
-            if trans_image.getpixel((j, i)) == trans_pixel:
-                output_image.putpixel((j, i), (255, 255, 255))
-            else:
-                output_image.putpixel((j, i), input_image.getpixel((j, i)))
-    out_name = "removedbg_" + os.path.basename(f)
+    trans_image = remove(input_image, alpha_matting=True,
+                alpha_matting_foreground_threshold=240,
+                alpha_matting_background_threshold=10,
+                alpha_matting_erode_size=6)
+
+    trans_image.load()
+    save_image = Image.new("RGB", trans_image.size, WHITE)
+    save_image.paste(trans_image, mask=trans_image.split()[3])
+
+    out_name = "removedbg_" + os.path.splitext(os.path.basename(f))[0] + ".jpg"
+    
     if out_dir != '.':
-        output_image.save(out_dir + "/" + out_name)
+        save_image.save(out_dir + "/" + out_name)
     else:
-        output_image.save(out_name)
+        save_image.save(out_name)
+
     print("saved : " + out_name)
