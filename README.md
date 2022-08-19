@@ -3,7 +3,7 @@
 使用するモデルに合わせて画像に前処理を加える。プロジェクトで使う用だが見られても困らないのでpublicにしておく。
 
 ## 一覧(順次追加)
-|  file name  |  discription  |
+|  file name  |  description  |
 | ---- | ---- |
 | bgw.py | 背景透過を用いて背景を白色にする |
 | crop.py | 正方形状にcenter cropする。|
