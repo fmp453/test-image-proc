@@ -10,7 +10,7 @@ parser.add_argument('--input_dir', type=str)
 parser.add_argument('--input_image', type=str)
 parser.add_argument('--out_dir', type=str, default='result')
 parser.add_argument('--is_resize', help='resize input image', type=strtobool, default='False')
-parser.add_argument('--crop_size', str=int, help='cropped image size.', default=256)
+parser.add_argument('--crop_size', type=int, help='cropped image size.', default=256)
 
 args = parser.parse_args()
 
