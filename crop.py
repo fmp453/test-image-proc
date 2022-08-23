@@ -41,7 +41,7 @@ half_length = crop_size // 2
 for image in image_path:
     im = Image.open(image)
     if im.height < crop_size or im.width < crop_size:
-        print("input image must be larger than 256 x 256.")
+        print("size of " + os.path.basename(image) + " must be larger than" + str(crop_size) + "x" + str(crop_size) + ".")
         exit()
     
     if is_resize:
@@ -60,3 +60,4 @@ for image in image_path:
             out_im.putpixel((j + half_length, i + half_length), pix)
     
     out_im.save(out_dir + "/" + os.path.basename(image))
+    print("crpped : " + os.path.basename(image))
