@@ -37,6 +37,7 @@ if crop_size % 2 != 0:
     exit()
 
 half_length = crop_size // 2
+cnt = 0
 
 for image in image_path:
     im = Image.open(image)
@@ -52,12 +53,11 @@ for image in image_path:
         im = im.resize((int(w / short * crop_size), int(h / short * crop_size)), resample=Image.Resampling.BICUBIC)
 
     center = (im.width // 2, im.height // 2)
-    out_im = Image.new(im.mode, (crop_size, crop_size))
 
-    for i in range(-half_length, half_length):
-        for j in range(-half_length, half_length):
-            pix = im.getpixel((j + center[0], i + center[1]))
-            out_im.putpixel((j + half_length, i + half_length), pix)
+    out_im = im.crop((center[0] - half_length, center[1] - half_length, center[0] + half_length, center[1] + half_length))
     
     out_im.save(out_dir + "/" + os.path.basename(image))
-    print("crpped : " + os.path.basename(image))
+    cnt += 1
+    if int(cnt / len(image_path) * 100) % 10 == 0:
+        print(str(int(cnt / len(image_path) * 100) % 10) + "'%' cropped.")
+    
