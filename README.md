@@ -22,7 +22,7 @@ GPU support:
 pip install rembg[gpu]
 ```
 
-`Pillow`がなければインストール
+`Pillow`がなければインストール。バージョンによっては`Image.Resampling`がないのでその場合はアップグレードすること。
 ```
 pip install Pillow
 ```
