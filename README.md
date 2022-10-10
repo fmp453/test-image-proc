@@ -12,6 +12,8 @@
 ## 環境
 `bgw.py`は`rembg`ライブラリを使用するため**Python3.9**のみでしか動作確認をしていない。
 <br>
+追記　Google ColabでPython3を用いて実行することを確認(2022/10/10)
+<br>
 CPU support:
 ```
 pip install rembg
