@@ -8,7 +8,7 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument('--input_image', type=str, help='File path to the input image')
 parser.add_argument('--input_dir', type=str, help='Directory path to a batch of input images')
-parser.add_argument('--out_dir', type=str, default='resrult', help='Directory path to save the output image(s)')
+parser.add_argument('--out_dir', type=str, default='result', help='Directory path to save the output image(s)')
 
 args = parser.parse_args()
 
