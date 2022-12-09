@@ -33,7 +33,7 @@ pip install Pillow
 下記のコードを参照。オプションについては次項参照のこと
 ```
 python bgw.py --inupt_image=sample.png
-python crop.py --input_image=sample.py --is_resize=True --crop_size=512
+python crop.py --input_image=sample.png --is_resize=True --crop_size=512
 ```
 
 ## オプション
